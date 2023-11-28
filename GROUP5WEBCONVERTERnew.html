@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number System Converter</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Conversion Of Number Systems">
+    <meta name="keywords" content="HTML, CSS, Python, Number System Conversion, Converter">
+    <meta name="author" content="VIT">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body, html {
+         height: 100%;
+         margin: 0;
+                    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://cdn.discordapp.com/attachments/1176162233378672726/1178698161326391366/pexels-johannes-plenio-1103970.jpg?ex=65771734&is=6564a234&hm=9c7214fd4d0784ee7e32873775e2a2c74a3c4826ee6a38f25a55883ab3570e8c&/1176162233378672726/1178698161569681488);
+            text-align: center;
+            
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+
+
+#menu-container {
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: -200px;
+      transition: left 0.3s ease;
+    }
+
+    #menu-toggle {
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    #menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    #menu li {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      text-align: center;
+    }
+
+
+
+        h1 {
+            
+  background-color: rgba(255,255,255,0.5);
+
+            
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        div {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+
+    </style>
+
+
+<style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+
+  <div id="menu-container">
+    <ul id="menu">
+      <li><a href="file:///C:/Users/Students/Downloads/homeprj.html" style="color: white;">Home</a></li>
+      <li><a href="file:///C:/Users/Students/Downloads/NS.html" style="color: white;">Info</a></li>
+      <li><a href="file:///C:/Users/Students/Downloads/GROUP5WEBCONVERTERnew.html" style="color: white;">Conversion</a></li>
+      <li><a href="C:\Users\Students\Downloads\Number System Conversion-1.pdf" style="color: white;">Report</a></li>
+      
+      
+     
+    </ul>
+  </div>
+
+  <div id="menu-toggle">&#9776;</div>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      var menuContainer = document.getElementById('menu-container');
+      var currentLeft = parseInt(window.getComputedStyle(menuContainer).left);
+
+      if (currentLeft < 0) {
+        menuContainer.style.left = '0';
+      } else {
+        menuContainer.style.left = '-200px';
+      }
+    });
+  </script>
+
+
+
+
+
+<h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 10;font-size: 45px;display:inline-block">NUMBER SYSTEM CONVERSION</h1><br>
+    <h1 style="display:inline-block"> BINARY Number System Converter</h1><br>
+    <input type="text" id="binaryInput1" placeholder="Enter binary number" /><br>
+    <br>
+    <label for="conversionType1">Convert to:</label>
+    <select id="conversionType1">
+        <option value="decimal1">Decimal</option>
+        <option value="hexadecimal1">Hexadecimal</option>
+        <option value="octal1">Octal</option>
+    </select>
+    <br><br>
+    <button onclick="convert1()">Convert</button>
+    <div id="result1"></div>
+
+    <script>
+        function convert1() {
+            var binaryInput1 = document.getElementById("binaryInput1").value;
+            var conversionType1 = document.getElementById("conversionType1").value;
+if (!/^[01]+$/.test(binaryInput1)) {
+                document.getElementById("result1").innerHTML = "Invalid binary input";
+                return;
+}            
+           var decimal1 = parseInt(binaryInput1, 2);
+
+            switch (conversionType1) {
+                case "decimal1":
+                    document.getElementById("result1").innerHTML = "Decimal: " + decimal1;
+                    break;
+                case "hexadecimal1":
+                    var hexadecimal1 = decimal1.toString(16).toUpperCase();
+                    document.getElementById("result1").innerHTML = "Hexadecimal: " + hexadecimal1;
+                    break;
+                case "octal1":
+                    var octal1 = decimal1.toString(8);
+                    document.getElementById("result1").innerHTML = "Octal: " + octal1;
+                    break;
+                default:
+                    document.getElementById("result1").innerHTML = "Invalid conversion type";
+                    break;
+            }
+        }
+   
+
+
+ </script>
+    <h1 style="display:inline-block"> DECIMAL Number System Converter </h1><br>
+    <input type="text" id="decimalInput" placeholder="Enter decimal number" /><br>
+    <br>
+    <label for="conversionType">Convert to:</label>
+    <select id="conversionType">
+        <option value="binary">Binary</option>
+        <option value="hexadecimal">Hexadecimal</option>
+        <option value="octal">Octal</option>
+    </select>
+    <br><br>
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+        function convert() {
+            var decimalInput = document.getElementById("decimalInput").value;
+            var conversionType = document.getElementById("conversionType").value;
+if (!/^\d+$/.test(decimalInput)) {
+                document.getElementById("result").innerHTML = "Invalid decimal input";
+                return; 
+}          
+ var decimal = parseInt(decimalInput, 10);
+
+            switch (conversionType) {
+                case "binary":
+                    var binary = decimal.toString(2);
+                    document.getElementById("result").innerHTML = "Binary: " + binary;
+                    break;
+                case "hexadecimal":
+                    var hexadecimal = decimal.toString(16).toUpperCase();
+                    document.getElementById("result").innerHTML = "Hexadecimal: " + hexadecimal;
+                    break;
+                case "octal":
+                    var octal = decimal.toString(8);
+                    document.getElementById("result").innerHTML = "Octal: " + octal;
+                    break;
+                default:
+                    document.getElementById("result").innerHTML = "Invalid conversion type";
+                    break;
+            }
+        }
+    </script>
+    <h1 style="display:inline-block"> HEXADECIMAL Number System Converter </h1><br>
+    <input type="text" id="hexadecimalInput2" placeholder="Enter hexadecimal number" /><br>
+    <br>
+    <label for="conversionType2">Convert to:</label>
+    <select id="conversionType2">
+        <option value="binary2">Binary</option>
+        <option value="decimal2">Decimal</option>
+        <option value="octal2">Octal</option>
+    </select>
+    <br><br>
+    <button onclick="convert2()">Convert</button>
+    <div id="result2"></div>
+
+    <script>
+        function convert2() {
+            var hexadecimalInput2 = document.getElementById("hexadecimalInput2").value;
+            var conversionType2 = document.getElementById("conversionType2").value;
+if (!/^[0-9A-Fa-f]+$/.test(hexadecimalInput2)) {
+            document.getElementById("result2").innerHTML = "Invalid hexadecimal input";
+            return;
+}
+            // Convert hexadecimal to decimal
+            var decimal2 = parseInt(hexadecimalInput2, 16);
+
+            switch (conversionType2) {
+                case "binary2":
+                    var binary2 = decimal2.toString(2);
+                    document.getElementById("result2").innerHTML = "Binary: " + binary2;
+                    break;
+                case "decimal2":
+                    document.getElementById("result2").innerHTML = "Decimal: " + decimal2;
+                    break;
+                case "octal2":
+                    var octal2 = decimal2.toString(8);
+                    document.getElementById("result2").innerHTML = "Octal: " + octal2;
+                    break;
+                default:
+                    document.getElementById("result2").innerHTML = "Invalid conversion type";
+                    break;
+            }
+        }
+    </script>
+    <h1 style="display:inline-block"> OCTAL Number System Converter </h1><br>
+    <input type="text" id="octalInput3" placeholder="Enter octal number" /><br>
+    <br>
+    <label for="conversionType3">Convert to:</label>
+    <select id="conversionType3">
+        <option value="binary3">Binary</option>
+        <option value="decimal3">Decimal</option>
+        <option value="hexadecimal3">Hexadecimal</option>
+    </select>
+    <br><br>
+    <button onclick="convert3()">Convert</button>
+    <div id="result3"></div><br><br><br>
+
+    <script>
+        function convert3() {
+            var octalInput3 = document.getElementById("octalInput3").value;
+            var conversionType3 = document.getElementById("conversionType3").value;
+ if (!/^[0-7]+$/.test(octalInput3)) {
+                document.getElementById("result3").innerHTML = "Invalid octal input";
+                return;}
+            // Convert octal to decimal
+            var decimal3 = parseInt(octalInput3, 8);
+
+            switch (conversionType3) {
+                case "binary3":
+                    var binary3 = decimal3.toString(2);
+                    document.getElementById("result3").innerHTML = "Binary: " + binary3;
+                    break;
+                case "decimal3":
+                    document.getElementById("result3").innerHTML = "Decimal: " + decimal3;
+                    break;
+                case "hexadecimal3":
+                    var hexadecimal3 = decimal3.toString(16).toUpperCase();
+                    document.getElementById("result3").innerHTML = "Hexadecimal: " + hexadecimal3;
+                    break;
+                default:
+                    document.getElementById("result3").innerHTML = "Invalid conversion type";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+
+
+
+
+</html>
+
+
+
+
