@@ -10,6 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
+
+.wel{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+    }
+        
         body, html {
          height: 100%;
          margin: 0;
@@ -63,9 +72,11 @@
     }
 
     #menu-toggle {
+        background-color: black;
+        color: white;
       font-size: 20px;
       cursor: pointer;
-      padding: 10px;
+      padding: 5px;
       position: fixed;
       top: 20px;
       left: 20px;
@@ -79,10 +90,12 @@
     }
 
     #menu li {
+        background-color: black;
       padding: 10px;
       border-bottom: 1px solid #555;
       text-align: center;
     }
+
 
 
 
@@ -134,9 +147,32 @@
             color: #333;
             animation: fadeIn 2s ease-in-out;
         }
+        #fadeInElement {
+            opacity: 0;
+            transition: opacity 1s ease-in-out; 
+        }
+        #fadeInElement.fadeIn {
+            opacity: 1;
+            display:block;
+        }
+        #fadeOutElement {
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out;
+            text-align:center; 
+            
+        }
+        #fadeOutElement.fadeOut {
+            opacity: 0;
+            display:none;
+        }
     </style>
 </head>
 <body>
+  <div id="fadeOutElement">
+    <h1 class="wel">Welcome</h1>
+  </div> 
+  
+  <div id="fadeInElement">
 
 
   <div id="menu-container">
@@ -144,6 +180,7 @@
       <li><a href="/num-sys-conv/index.html" style="color: white;">Home</a></li>
       <li><a href="/num-sys-conv/Info.html" style="color: white;">Info</a></li>
       <li><a href="/num-sys-conv/Conv.html" style="color: white;">Conversion</a></li>
+      <li><a href="/num-sys-conv/AS.html" style="color: white;">Binary Calc</a></li>
       <li><a href="/num-sys-conv/Number System Conversion.pdf" style="color: white;">Report</a></li>
       
      
@@ -163,12 +200,13 @@
         menuContainer.style.left = '-200px';
       }
     });
+    setTimeout(function() {
+            document.getElementById('fadeInElement').classList.add('fadeIn');
+        }, 2000);
+        setTimeout(function() {
+            document.getElementById('fadeOutElement').classList.add('fadeOut');
+        }, 1800);
   </script>
-
-
-
-
-
 <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 10;font-size: 45px;display:inline-block">NUMBER SYSTEM </h1><br>
     
 <div class="marquee-container">
@@ -176,15 +214,12 @@
       <p>This web page will give you information about Number System</p>
     </div>
   </div>
-
-
-
     <p style="font-size:31px"><b>Mini Project Created By</b></p>
 
  <div id="container" style="display:inline-block">HARSHAL BANGAR<br><br>DEVEN BAGADE<br><br>PRATIK PUJARI<br></div>
 
 
-
+</div>
 </body>
 
 
